@@ -1,0 +1,127 @@
+EarthShaker	撼地神牛
+Sven	斯温
+Tiny	小小
+Kunkka	昆卡
+BeastMaster	兽王
+Dragon Knight	龙骑士
+Clockwerk	发条技师
+Omni Knight	全能骑士
+Huskar	哈斯卡
+Abadon	亚巴顿
+Alchemist	炼金
+Axe	斧王
+BrewMaster	酒仙
+BristleBack	刚背兽
+Centaur Warrunner	半人马战行者
+Chaos Knight	混沌骑士
+DawnBreaker	破晓星辰
+Doom	末日
+EarthSpirit	大地之灵
+ElderTiTan	上古巨神
+IO	艾欧
+LegionCommander	军团指挥官
+Life Stealer	食尸鬼
+Lycan	莱肯
+Magnus	马格纳斯
+Marci	马西
+Mars	玛尔斯
+Knight Stalker	暗夜魔王
+Phoenix	凤凰
+Primal Beast	原始兽
+Pudge	帕吉
+Sand King	沙王
+Slardar	斯拉达
+SnapFire	电炎绝手
+SpiritBreaker	裂魂者
+TideHunter	潮汐猎人
+Timbersaw	伐木机
+Treant Protector	树精卫士
+Tusk	巨牙
+Underlord	深渊领主
+Undying	不朽尸王
+Wraith King	冥王
+Anti-Mage	敌法
+ArcWarden	天穹守望者
+BloodSeeker	血魔
+BountyHunter	赏金
+BroodMather	育母蜘蛛
+Clinkz	克林克滋
+DrowRanger	卓尔游侠
+EmberSpirit	灰烬之灵
+FacelessVoid	虚空假面
+Gyrocopter	矮人直升机
+HoodWink	森海飞霞
+Juggernaut	主宰
+Lone Druid	德鲁伊
+Luna	露娜
+Medusa	美杜莎
+Mirana	米拉娜
+Monkey King	齐天大圣
+Morphling	变体精灵
+Naga Siren	娜迦海妖
+Nyx Assassin	司夜刺客
+Pangolier	石鳞剑士
+Phantom Assassin	幻影刺客
+Phantom Lancer	幻影长矛手
+Razor	剃刀
+Riki	力丸
+Shadow Fiend	影魔
+Slark	斯拉克
+Sniper	狙击手
+Spectre	幽魂
+Templar Assassin	圣堂刺客
+Terror Blade	恐怖利刃
+TrollWarlord	巨魔战将
+Ursa	熊战士
+Vengeful Spirit	复仇之魂
+VenoMancer	剧毒术士
+Weaver	织网蜘蛛
+Ancient Apparition	远古冰魄
+Bane	祸乱之源
+BatRider	蝙蝠骑士
+Chen	陈
+CristalMaiden	水晶室女
+DarkSeer	黑暗贤者
+DarkWillow	邪影芳灵
+Dazzle	戴泽
+DeathProphet	死亡先知
+Disruptor	干扰者
+Enchantress	魅惑魔女
+Enigma	谜团
+Grimstroke	天涯墨客
+Invoker	祈求者
+Jakiro	杰奇略
+Keeper of the light	光之守卫
+Leshrac	拉希克
+Lich	巫妖
+Lina	莉娜
+Lion	莱恩
+Nature`s Prophet	先知
+Necrophos	瘟疫法师
+Ogre Maci	食人魔魔法师
+Oracle	神谕者
+Outworld Destroyer	殁境神蚀者
+Puck	帕克
+Pugna	帕格那
+Queen of Pain	痛苦女王
+Rubick	拉比克
+Shadow Demon	暗影恶魔
+Shadow Shaman	暗影萨满
+Silencer	沉默术士
+Skywrace Mage	天怒法师
+StormSpirit	风暴之灵
+Techies	工程师
+Tinker	修补匠
+Visage	维萨吉
+Void Spirit	虚无之灵
+Warlock	术士
+WindRanger	风行者
+WinterWyvern	寒冬飞龙
+WitchDoctor	巫医
+Zeus	宙斯
+Viper	毒龙
+Meepo	米波
+Ringmaster	百戏大王
+Muerta	琼英碧灵
+Kez	凯
+Largo	朗戈

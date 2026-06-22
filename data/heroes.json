@@ -1,0 +1,3363 @@
+[
+  {
+    "id": 1,
+    "name": "npc_dota_hero_antimage",
+    "displayName": "Anti-Mage",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 3
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 3
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "敌法"
+  },
+  {
+    "id": 2,
+    "name": "npc_dota_hero_axe",
+    "displayName": "Axe",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 3
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "斧王"
+  },
+  {
+    "id": 3,
+    "name": "npc_dota_hero_bane",
+    "displayName": "Bane",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 3
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "祸乱之源"
+  },
+  {
+    "id": 4,
+    "name": "npc_dota_hero_bloodseeker",
+    "displayName": "Bloodseeker",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "血魔"
+  },
+  {
+    "id": 5,
+    "name": "npc_dota_hero_crystal_maiden",
+    "displayName": "Crystal Maiden",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "水晶室女"
+  },
+  {
+    "id": 6,
+    "name": "npc_dota_hero_drow_ranger",
+    "displayName": "Drow Ranger",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "卓尔游侠"
+  },
+  {
+    "id": 7,
+    "name": "npc_dota_hero_earthshaker",
+    "displayName": "Earthshaker",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "撼地神牛"
+  },
+  {
+    "id": 8,
+    "name": "npc_dota_hero_juggernaut",
+    "displayName": "Juggernaut",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "主宰"
+  },
+  {
+    "id": 9,
+    "name": "npc_dota_hero_mirana",
+    "displayName": "Mirana",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "米拉娜"
+  },
+  {
+    "id": 10,
+    "name": "npc_dota_hero_morphling",
+    "displayName": "Morphling",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 3
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 3
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "变体精灵"
+  },
+  {
+    "id": 11,
+    "name": "npc_dota_hero_nevermore",
+    "displayName": "Shadow Fiend",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "影魔"
+  },
+  {
+    "id": 12,
+    "name": "npc_dota_hero_phantom_lancer",
+    "displayName": "Phantom Lancer",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "幻影长矛手"
+  },
+  {
+    "id": 13,
+    "name": "npc_dota_hero_puck",
+    "displayName": "Puck",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 3
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "帕克"
+  },
+  {
+    "id": 14,
+    "name": "npc_dota_hero_pudge",
+    "displayName": "Pudge",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "帕吉"
+  },
+  {
+    "id": 15,
+    "name": "npc_dota_hero_razor",
+    "displayName": "Razor",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "剃刀"
+  },
+  {
+    "id": 16,
+    "name": "npc_dota_hero_sand_king",
+    "displayName": "Sand King",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "沙王"
+  },
+  {
+    "id": 17,
+    "name": "npc_dota_hero_storm_spirit",
+    "displayName": "Storm Spirit",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 3
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "风暴之灵"
+  },
+  {
+    "id": 18,
+    "name": "npc_dota_hero_sven",
+    "displayName": "Sven",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "斯温"
+  },
+  {
+    "id": 19,
+    "name": "npc_dota_hero_tiny",
+    "displayName": "Tiny",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 3
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "小小"
+  },
+  {
+    "id": 20,
+    "name": "npc_dota_hero_vengefulspirit",
+    "displayName": "Vengeful Spirit",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "复仇之魂"
+  },
+  {
+    "id": 21,
+    "name": "npc_dota_hero_windrunner",
+    "displayName": "Windranger",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "风行者"
+  },
+  {
+    "id": 22,
+    "name": "npc_dota_hero_zuus",
+    "displayName": "Zeus",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "宙斯"
+  },
+  {
+    "id": 23,
+    "name": "npc_dota_hero_kunkka",
+    "displayName": "Kunkka",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "昆卡"
+  },
+  {
+    "id": 25,
+    "name": "npc_dota_hero_lina",
+    "displayName": "Lina",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "莉娜"
+  },
+  {
+    "id": 26,
+    "name": "npc_dota_hero_lion",
+    "displayName": "Lion",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 3
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 3
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "莱恩"
+  },
+  {
+    "id": 27,
+    "name": "npc_dota_hero_shadow_shaman",
+    "displayName": "Shadow Shaman",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 3
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "暗影萨满"
+  },
+  {
+    "id": 28,
+    "name": "npc_dota_hero_slardar",
+    "displayName": "Slardar",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "斯拉达"
+  },
+  {
+    "id": 29,
+    "name": "npc_dota_hero_tidehunter",
+    "displayName": "Tidehunter",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 3
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "潮汐猎人"
+  },
+  {
+    "id": 30,
+    "name": "npc_dota_hero_witch_doctor",
+    "displayName": "Witch Doctor",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "巫医"
+  },
+  {
+    "id": 31,
+    "name": "npc_dota_hero_lich",
+    "displayName": "Lich",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "巫妖"
+  },
+  {
+    "id": 32,
+    "name": "npc_dota_hero_riki",
+    "displayName": "Riki",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "力丸"
+  },
+  {
+    "id": 33,
+    "name": "npc_dota_hero_enigma",
+    "displayName": "Enigma",
+    "roles": [
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "谜团"
+  },
+  {
+    "id": 34,
+    "name": "npc_dota_hero_tinker",
+    "displayName": "Tinker",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 3
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "修补匠"
+  },
+  {
+    "id": 35,
+    "name": "npc_dota_hero_sniper",
+    "displayName": "Sniper",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 3
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "狙击手"
+  },
+  {
+    "id": 36,
+    "name": "npc_dota_hero_necrolyte",
+    "displayName": "Necrophos",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "瘟疫法师"
+  },
+  {
+    "id": 37,
+    "name": "npc_dota_hero_warlock",
+    "displayName": "Warlock",
+    "roles": [
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "术士"
+  },
+  {
+    "id": 38,
+    "name": "npc_dota_hero_beastmaster",
+    "displayName": "Beastmaster",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "兽王"
+  },
+  {
+    "id": 39,
+    "name": "npc_dota_hero_queenofpain",
+    "displayName": "Queen of Pain",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 3
+      },
+      {
+        "roleId": "NUKER",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "痛苦女王"
+  },
+  {
+    "id": 40,
+    "name": "npc_dota_hero_venomancer",
+    "displayName": "Venomancer",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "剧毒术士"
+  },
+  {
+    "id": 41,
+    "name": "npc_dota_hero_faceless_void",
+    "displayName": "Faceless Void",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 3
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "虚空假面"
+  },
+  {
+    "id": 42,
+    "name": "npc_dota_hero_skeleton_king",
+    "displayName": "Wraith King",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "冥王"
+  },
+  {
+    "id": 43,
+    "name": "npc_dota_hero_death_prophet",
+    "displayName": "Death Prophet",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "死亡先知"
+  },
+  {
+    "id": 44,
+    "name": "npc_dota_hero_phantom_assassin",
+    "displayName": "Phantom Assassin",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 3
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "幻影刺客"
+  },
+  {
+    "id": 45,
+    "name": "npc_dota_hero_pugna",
+    "displayName": "Pugna",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "帕格那"
+  },
+  {
+    "id": 46,
+    "name": "npc_dota_hero_templar_assassin",
+    "displayName": "Templar Assassin",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "圣堂刺客"
+  },
+  {
+    "id": 47,
+    "name": "npc_dota_hero_viper",
+    "displayName": "Viper",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "毒龙"
+  },
+  {
+    "id": 48,
+    "name": "npc_dota_hero_luna",
+    "displayName": "Luna",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "露娜"
+  },
+  {
+    "id": 49,
+    "name": "npc_dota_hero_dragon_knight",
+    "displayName": "Dragon Knight",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "龙骑士"
+  },
+  {
+    "id": 50,
+    "name": "npc_dota_hero_dazzle",
+    "displayName": "Dazzle",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "戴泽"
+  },
+  {
+    "id": 51,
+    "name": "npc_dota_hero_rattletrap",
+    "displayName": "Clockwerk",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 3
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "发条技师"
+  },
+  {
+    "id": 52,
+    "name": "npc_dota_hero_leshrac",
+    "displayName": "Leshrac",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "拉希克"
+  },
+  {
+    "id": 53,
+    "name": "npc_dota_hero_furion",
+    "displayName": "Nature's Prophet",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "先知"
+  },
+  {
+    "id": 54,
+    "name": "npc_dota_hero_life_stealer",
+    "displayName": "Lifestealer",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "食尸鬼"
+  },
+  {
+    "id": 55,
+    "name": "npc_dota_hero_dark_seer",
+    "displayName": "Dark Seer",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "黑暗贤者"
+  },
+  {
+    "id": 56,
+    "name": "npc_dota_hero_clinkz",
+    "displayName": "Clinkz",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 3
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "克林克滋"
+  },
+  {
+    "id": 57,
+    "name": "npc_dota_hero_omniknight",
+    "displayName": "Omniknight",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "全能骑士"
+  },
+  {
+    "id": 58,
+    "name": "npc_dota_hero_enchantress",
+    "displayName": "Enchantress",
+    "roles": [
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "魅惑魔女"
+  },
+  {
+    "id": 59,
+    "name": "npc_dota_hero_huskar",
+    "displayName": "Huskar",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "哈斯卡"
+  },
+  {
+    "id": 60,
+    "name": "npc_dota_hero_night_stalker",
+    "displayName": "Night Stalker",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "暗夜魔王"
+  },
+  {
+    "id": 61,
+    "name": "npc_dota_hero_broodmother",
+    "displayName": "Broodmother",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 3
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "育母蜘蛛"
+  },
+  {
+    "id": 62,
+    "name": "npc_dota_hero_bounty_hunter",
+    "displayName": "Bounty Hunter",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "赏金"
+  },
+  {
+    "id": 63,
+    "name": "npc_dota_hero_weaver",
+    "displayName": "Weaver",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "织网蜘蛛"
+  },
+  {
+    "id": 64,
+    "name": "npc_dota_hero_jakiro",
+    "displayName": "Jakiro",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "杰奇略"
+  },
+  {
+    "id": 65,
+    "name": "npc_dota_hero_batrider",
+    "displayName": "Batrider",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "蝙蝠骑士"
+  },
+  {
+    "id": 66,
+    "name": "npc_dota_hero_chen",
+    "displayName": "Chen",
+    "roles": [
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "陈"
+  },
+  {
+    "id": 67,
+    "name": "npc_dota_hero_spectre",
+    "displayName": "Spectre",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 3
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "幽魂"
+  },
+  {
+    "id": 68,
+    "name": "npc_dota_hero_ancient_apparition",
+    "displayName": "Ancient Apparition",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "远古冰魄"
+  },
+  {
+    "id": 69,
+    "name": "npc_dota_hero_doom_bringer",
+    "displayName": "Doom",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "末日"
+  },
+  {
+    "id": 70,
+    "name": "npc_dota_hero_ursa",
+    "displayName": "Ursa",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "熊战士"
+  },
+  {
+    "id": 71,
+    "name": "npc_dota_hero_spirit_breaker",
+    "displayName": "Spirit Breaker",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "裂魂者"
+  },
+  {
+    "id": 72,
+    "name": "npc_dota_hero_gyrocopter",
+    "displayName": "Gyrocopter",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 3
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "矮人直升机"
+  },
+  {
+    "id": 73,
+    "name": "npc_dota_hero_alchemist",
+    "displayName": "Alchemist",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "炼金"
+  },
+  {
+    "id": 74,
+    "name": "npc_dota_hero_invoker",
+    "displayName": "Invoker",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "祈求者"
+  },
+  {
+    "id": 75,
+    "name": "npc_dota_hero_silencer",
+    "displayName": "Silencer",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "沉默术士"
+  },
+  {
+    "id": 76,
+    "name": "npc_dota_hero_obsidian_destroyer",
+    "displayName": "Outworld Destroyer",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "殁境神蚀者"
+  },
+  {
+    "id": 77,
+    "name": "npc_dota_hero_lycan",
+    "displayName": "Lycan",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "莱肯"
+  },
+  {
+    "id": 78,
+    "name": "npc_dota_hero_brewmaster",
+    "displayName": "Brewmaster",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 3
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "酒仙"
+  },
+  {
+    "id": 79,
+    "name": "npc_dota_hero_shadow_demon",
+    "displayName": "Shadow Demon",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "暗影恶魔"
+  },
+  {
+    "id": 80,
+    "name": "npc_dota_hero_lone_druid",
+    "displayName": "Lone Druid",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "德鲁伊"
+  },
+  {
+    "id": 81,
+    "name": "npc_dota_hero_chaos_knight",
+    "displayName": "Chaos Knight",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 3
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "混沌骑士"
+  },
+  {
+    "id": 82,
+    "name": "npc_dota_hero_meepo",
+    "displayName": "Meepo",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "米波"
+  },
+  {
+    "id": 83,
+    "name": "npc_dota_hero_treant",
+    "displayName": "Treant Protector",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "树精卫士"
+  },
+  {
+    "id": 84,
+    "name": "npc_dota_hero_ogre_magi",
+    "displayName": "Ogre Magi",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "食人魔魔法师"
+  },
+  {
+    "id": 85,
+    "name": "npc_dota_hero_undying",
+    "displayName": "Undying",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "不朽尸王"
+  },
+  {
+    "id": 86,
+    "name": "npc_dota_hero_rubick",
+    "displayName": "Rubick",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "拉比克"
+  },
+  {
+    "id": 87,
+    "name": "npc_dota_hero_disruptor",
+    "displayName": "Disruptor",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "干扰者"
+  },
+  {
+    "id": 88,
+    "name": "npc_dota_hero_nyx_assassin",
+    "displayName": "Nyx Assassin",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "司夜刺客"
+  },
+  {
+    "id": 89,
+    "name": "npc_dota_hero_naga_siren",
+    "displayName": "Naga Siren",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 3
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "娜迦海妖"
+  },
+  {
+    "id": 90,
+    "name": "npc_dota_hero_keeper_of_the_light",
+    "displayName": "Keeper of the Light",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "光之守卫"
+  },
+  {
+    "id": 91,
+    "name": "npc_dota_hero_wisp",
+    "displayName": "Io",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "艾欧"
+  },
+  {
+    "id": 92,
+    "name": "npc_dota_hero_visage",
+    "displayName": "Visage",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "维萨吉"
+  },
+  {
+    "id": 93,
+    "name": "npc_dota_hero_slark",
+    "displayName": "Slark",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 3
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "斯拉克"
+  },
+  {
+    "id": 94,
+    "name": "npc_dota_hero_medusa",
+    "displayName": "Medusa",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 3
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "美杜莎"
+  },
+  {
+    "id": 95,
+    "name": "npc_dota_hero_troll_warlord",
+    "displayName": "Troll Warlord",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 3
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "巨魔战将"
+  },
+  {
+    "id": 96,
+    "name": "npc_dota_hero_centaur",
+    "displayName": "Centaur Warrunner",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 3
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "半人马战行者"
+  },
+  {
+    "id": 97,
+    "name": "npc_dota_hero_magnataur",
+    "displayName": "Magnus",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "马格纳斯"
+  },
+  {
+    "id": 98,
+    "name": "npc_dota_hero_shredder",
+    "displayName": "Timbersaw",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 3
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "伐木机"
+  },
+  {
+    "id": 99,
+    "name": "npc_dota_hero_bristleback",
+    "displayName": "Bristleback",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "刚背兽"
+  },
+  {
+    "id": 100,
+    "name": "npc_dota_hero_tusk",
+    "displayName": "Tusk",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "巨牙"
+  },
+  {
+    "id": 101,
+    "name": "npc_dota_hero_skywrath_mage",
+    "displayName": "Skywrath Mage",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "天怒法师"
+  },
+  {
+    "id": 102,
+    "name": "npc_dota_hero_abaddon",
+    "displayName": "Abaddon",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "亚巴顿"
+  },
+  {
+    "id": 103,
+    "name": "npc_dota_hero_elder_titan",
+    "displayName": "Elder Titan",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "上古巨神"
+  },
+  {
+    "id": 104,
+    "name": "npc_dota_hero_legion_commander",
+    "displayName": "Legion Commander",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "军团指挥官"
+  },
+  {
+    "id": 105,
+    "name": "npc_dota_hero_techies",
+    "displayName": "Techies",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "工程师"
+  },
+  {
+    "id": 106,
+    "name": "npc_dota_hero_ember_spirit",
+    "displayName": "Ember Spirit",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 3
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "灰烬之灵"
+  },
+  {
+    "id": 107,
+    "name": "npc_dota_hero_earth_spirit",
+    "displayName": "Earth Spirit",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "大地之灵"
+  },
+  {
+    "id": 108,
+    "name": "npc_dota_hero_abyssal_underlord",
+    "displayName": "Underlord",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "深渊领主"
+  },
+  {
+    "id": 109,
+    "name": "npc_dota_hero_terrorblade",
+    "displayName": "Terrorblade",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 3
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "PUSHER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "恐怖利刃"
+  },
+  {
+    "id": 110,
+    "name": "npc_dota_hero_phoenix",
+    "displayName": "Phoenix",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 3
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "凤凰"
+  },
+  {
+    "id": 111,
+    "name": "npc_dota_hero_oracle",
+    "displayName": "Oracle",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "神谕者"
+  },
+  {
+    "id": 112,
+    "name": "npc_dota_hero_winter_wyvern",
+    "displayName": "Winter Wyvern",
+    "roles": [
+      {
+        "roleId": "NUKER",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "寒冬飞龙"
+  },
+  {
+    "id": 113,
+    "name": "npc_dota_hero_arc_warden",
+    "displayName": "Arc Warden",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 3
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 3
+      },
+      {
+        "roleId": "NUKER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "天穹守望者"
+  },
+  {
+    "id": 114,
+    "name": "npc_dota_hero_monkey_king",
+    "displayName": "Monkey King",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "齐天大圣"
+  },
+  {
+    "id": 119,
+    "name": "npc_dota_hero_dark_willow",
+    "displayName": "Dark Willow",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "邪影芳灵"
+  },
+  {
+    "id": 120,
+    "name": "npc_dota_hero_pangolier",
+    "displayName": "Pangolier",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 1
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "石鳞剑士"
+  },
+  {
+    "id": 121,
+    "name": "npc_dota_hero_grimstroke",
+    "displayName": "Grimstroke",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "天涯墨客"
+  },
+  {
+    "id": 123,
+    "name": "npc_dota_hero_hoodwink",
+    "displayName": "Hoodwink",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "森海飞霞"
+  },
+  {
+    "id": 126,
+    "name": "npc_dota_hero_void_spirit",
+    "displayName": "Void Spirit",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 2
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 3
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "虚无之灵"
+  },
+  {
+    "id": 128,
+    "name": "npc_dota_hero_snapfire",
+    "displayName": "Snapfire",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "NUKER",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "电炎绝手"
+  },
+  {
+    "id": 129,
+    "name": "npc_dota_hero_mars",
+    "displayName": "Mars",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "玛尔斯"
+  },
+  {
+    "id": 131,
+    "name": "npc_dota_hero_ringmaster",
+    "displayName": "Ringmaster",
+    "roles": [
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "百戏大王"
+  },
+  {
+    "id": 135,
+    "name": "npc_dota_hero_dawnbreaker",
+    "displayName": "Dawnbreaker",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "破晓星辰"
+  },
+  {
+    "id": 136,
+    "name": "npc_dota_hero_marci",
+    "displayName": "Marci",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 1
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 1
+      },
+      {
+        "roleId": "INITIATOR",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "ALL"
+    },
+    "displayNameZh": "马西"
+  },
+  {
+    "id": 137,
+    "name": "npc_dota_hero_primal_beast",
+    "displayName": "Primal Beast",
+    "roles": [
+      {
+        "roleId": "INITIATOR",
+        "level": 3
+      },
+      {
+        "roleId": "DURABLE",
+        "level": 3
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 2
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "原始兽"
+  },
+  {
+    "id": 138,
+    "name": "npc_dota_hero_muerta",
+    "displayName": "Muerta",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 3
+      },
+      {
+        "roleId": "NUKER",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "INT"
+    },
+    "displayNameZh": "琼英碧灵"
+  },
+  {
+    "id": 145,
+    "name": "npc_dota_hero_kez",
+    "displayName": "Kez",
+    "roles": [
+      {
+        "roleId": "CARRY",
+        "level": 3
+      },
+      {
+        "roleId": "ESCAPE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "AGI"
+    },
+    "displayNameZh": "凯"
+  },
+  {
+    "id": 155,
+    "name": "npc_dota_hero_largo",
+    "displayName": "Largo",
+    "roles": [
+      {
+        "roleId": "DURABLE",
+        "level": 2
+      },
+      {
+        "roleId": "DISABLER",
+        "level": 1
+      },
+      {
+        "roleId": "SUPPORT",
+        "level": 3
+      }
+    ],
+    "stats": {
+      "primaryAttributeEnum": "STR"
+    },
+    "displayNameZh": "朗戈"
+  }
+]

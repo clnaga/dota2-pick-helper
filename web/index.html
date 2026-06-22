@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dota 2 Counter Helper</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>克制指南</h1>
+    <div class="header-right">
+      <button id="btn-toggle-mode" class="btn-mode btn-live" onclick="toggleTestMode()">LIVE</button>
+    </div>
+  </header>
+
+  <section id="bans-section">
+    <h2 class="section-title bans-title">禁用 <span id="ban-count" class="count">0</span><span class="remove-hint"> 点击移除</span></h2>
+    <div id="bans-list" class="hero-row"></div>
+  </section>
+
+  <section id="picks-section">
+    <div class="picks-columns">
+      <div class="team-col allies-col">
+        <h3 class="team-title allies-title">友方 <span id="ally-count" class="count">0/5</span><span class="remove-hint"> 点击移除</span></h3>
+        <div id="allies-list" class="hero-row"></div>
+      </div>
+      <div class="team-col enemies-col">
+        <h3 class="team-title enemies-title">敌方 <span id="enemy-count" class="count">0/5</span><span class="remove-hint"> 点击移除</span></h3>
+        <div id="enemies-list" class="hero-row"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="turn-section">
+    <div id="turn-indicator" class="turn-info"></div>
+  </section>
+
+  <!-- Test Mode Hero Selector -->
+  <section id="test-controls" style="display:none;">
+    <div class="test-toolbar">
+      <input type="text" id="hero-search" placeholder="搜索英雄..." oninput="filterHeroes()">
+      <div class="attr-filter">
+        <button class="attr-btn active" data-attr="all" onclick="setAttrFilter('all')">全部</button>
+        <button class="attr-btn" data-attr="str" onclick="setAttrFilter('str')" style="color:#f66">STR</button>
+        <button class="attr-btn" data-attr="agi" onclick="setAttrFilter('agi')" style="color:#6f6">AGI</button>
+        <button class="attr-btn" data-attr="int" onclick="setAttrFilter('int')" style="color:#68f">INT</button>
+        <button class="attr-btn" data-attr="uni" onclick="setAttrFilter('uni')" style="color:#d8f">UNI</button>
+      </div>
+    </div>
+    <div id="hero-grid" class="hero-grid"></div>
+    <div class="test-actions">
+      <button class="btn-action btn-add-enemy" onclick="addSelectedHero('enemy')">+ 敌方</button>
+      <button class="btn-action btn-add-ally" onclick="addSelectedHero('ally')">+ 友方</button>
+      <button class="btn-action btn-ban" onclick="addSelectedHero('ban')">+ 禁用</button>
+      <button class="btn-action btn-clear" onclick="clearTestData()">清空</button>
+    </div>
+  </section>
+
+  <section id="suggestions-section">
+    <div class="suggestions-columns">
+      <div class="suggestion-col">
+        <h3 class="suggestion-title picks-title">推荐选择</h3>
+        <div id="picks-list" class="suggestion-list"></div>
+      </div>
+      <div class="suggestion-col">
+        <h3 class="suggestion-title bans-suggestion-title">建议禁用</h3>
+        <div id="bans-suggestion-list" class="suggestion-list"></div>
+      </div>
+      <div class="suggestion-col">
+        <h3 class="suggestion-title allies-suggestion-title">推荐搭配</h3>
+        <div id="allies-suggestion-list" class="suggestion-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span id="status-text">等待中...</span>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
