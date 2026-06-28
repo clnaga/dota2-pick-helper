@@ -8,25 +8,22 @@ let searchQuery = '';
 // ===== Attribute colors =====
 const attrColors = { str: '#f66', agi: '#6f6', int: '#68f', uni: '#d8f' };
 
-// ===== Fetch =====
-async function api(url) {
+// ===== SSE — push-based, 1 persistent connection =====
+const es = new EventSource('/api/stream');
+es.onmessage = function(e) {
   try {
-    const res = await fetch(url);
-    return res.ok ? await res.json() : null;
-  } catch(e) { return null; }
-}
-
-async function fetchState() {
-  const data = await api('/api/state');
-  if (data) {
-    state = data;
-    if (data.heroDatabase) {
-      heroMap = {};
-      for (const h of data.heroDatabase) heroMap[h.id] = h;
+    const data = JSON.parse(e.data);
+    if (data) {
+      state = data;
+      if (data.heroDatabase) {
+        heroMap = {};
+        for (const h of data.heroDatabase) heroMap[h.id] = h;
+      }
+      render();
     }
-    render();
-  }
-}
+  } catch(_) {}
+};
+// No onerror — browser handles reconnection natively
 
 // ===== Render =====
 function render() {
@@ -208,9 +205,9 @@ async function addSelectedHero(type) {
   const actions = { enemy: 'enemy_add', ally: 'ally_add', ban: 'ban' };
   const action = actions[type];
   if (!action) return;
-  await api('/api/test/' + action + '?id=' + selectedHeroId);
+  fetch('/api/test/' + action + '?id=' + selectedHeroId);
   selectedHeroId = null;
-  await fetchState();
+  // SSE pushes the update — no need to poll
 }
 
 async function removeItem(heroId) {
@@ -218,21 +215,18 @@ async function removeItem(heroId) {
   const inAlly = (state.allyHeroes || []).some(h => h.heroId === heroId);
   const inBan = (state.bannedHeroes || []).some(h => h.heroId === heroId);
   
-  if (inBan) await api('/api/test/unban?id=' + heroId);
-  else if (inEnemy) await api('/api/test/enemy_remove?id=' + heroId);
-  else if (inAlly) await api('/api/test/ally_remove?id=' + heroId);
-  await fetchState();
+  if (inBan) fetch('/api/test/unban?id=' + heroId);
+  else if (inEnemy) fetch('/api/test/enemy_remove?id=' + heroId);
+  else if (inAlly) fetch('/api/test/ally_remove?id=' + heroId);
 }
 
 async function clearTestData() {
-  await api('/api/test/clear');
-  await fetchState();
+  fetch('/api/test/clear');
 }
 
 async function toggleTestMode() {
-  await api('/api/test/toggle');
+  fetch('/api/test/toggle');
   selectedHeroId = null;
-  await fetchState();
 }
 
 function setAttrFilter(attr) {
@@ -260,9 +254,4 @@ function filterHeroes() {
   renderHeroGrid();
 }
 
-async function poll() {
-  await fetchState();
-  setTimeout(poll, 1000);
-}
 
-poll();

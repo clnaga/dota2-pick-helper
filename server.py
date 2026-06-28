@@ -1,16 +1,94 @@
 # server.py - Dota 2 Counter Helper (Python + Flask)
 # Port 3001 = GSI receiver, Port 3002 = Web UI + API
 
-import json, webbrowser
+import json, webbrowser, atexit
 from pathlib import Path
 from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
-from threading import Thread
-from http.server import HTTPServer, BaseHTTPRequestHandler
+from gsi import GSIServer
 
 BASE = Path(__file__).parent
 DATA = BASE / "data"
 WEB = BASE / "web"
+
+# ── Auto-install GSI config to Dota 2 directory ─────────────────
+def install_gsi_config():
+    """Auto-deploy GSI .cfg to Dota 2 folder (like the C++ version)."""
+    import subprocess, os
+
+    cfg_src = BASE / "gsi-config" / "gamestate_integration_counter_helper.cfg"
+    cfg_content = cfg_src.read_text(encoding="utf-8")
+
+    steam_paths = []
+
+    # 1. Read Steam path from Windows registry
+    try:
+        import winreg
+        with winreg.OpenKey(winreg.HKEY_CURRENT_USER, r"Software\Valve\Steam") as k:
+            p = winreg.QueryValueEx(k, "SteamPath")[0].replace("/", "\\")
+            steam_paths.append(p)
+            print(f"[GSI] Steam from registry: {p}")
+    except Exception as e:
+        print(f"[GSI] Registry read failed: {e}")
+
+    # 2. Parse libraryfolders.vdf for additional Steam libraries
+    for base in list(steam_paths):
+        vdf = Path(base) / "steamapps" / "libraryfolders.vdf"
+        if vdf.exists():
+            try:
+                for line in vdf.read_text(encoding="utf-8").splitlines():
+                    if '"path"' in line:
+                        p = line.split('"')[3].replace("\\\\", "\\")
+                        if p not in steam_paths:
+                            steam_paths.append(p)
+                            print(f"[GSI] Steam library from VDF: {p}")
+            except Exception as e:
+                print(f"[GSI] VDF parse failed: {e}")
+
+    # 3. Add hardcoded fallback paths (common Dota install locations)
+    for fb in [r"D:\SteamLibrary", r"D:\Steam", r"C:\Program Files (x86)\Steam",
+               r"C:\Steam", r"E:\SteamLibrary", r"E:\Steam", r"F:\Steam"]:
+        if Path(fb).exists() and fb not in steam_paths:
+            steam_paths.append(fb)
+            print(f"[GSI] Fallback path: {fb}")
+
+    # 4. Search for Dota 2 GSI folder in each library + FORCE overwrite
+    for lib in steam_paths:
+        gsi_dir = Path(lib) / "steamapps" / "common" / "dota 2 beta" / "game" / "dota" / "cfg" / "gamestate_integration"
+        if gsi_dir.parent.exists():
+            gsi_dir.mkdir(parents=True, exist_ok=True)
+            dest = gsi_dir / "gamestate_integration_counter_helper.cfg"
+            old = dest.read_text(encoding="utf-8") if dest.exists() else ""
+            dest.write_text(cfg_content, encoding="utf-8")
+            tag = "UPDATED" if old else "INSTALLED"
+            print(f"[GSI] Config {tag}: {dest}")
+            if old and old != cfg_content:
+                has_ap = '"allplayers"' in old
+                print(f"[GSI]   Old had allplayers={has_ap}, missing_draft={'"draft"' not in old} → overwritten")
+            return str(dest)
+
+    # 5. Last resort: brute-force scan for dota 2 beta folder
+    print("[GSI] Searching disk for dota 2 beta...")
+    for drive in [Path("D:/"), Path("C:/"), Path("E:/"), Path("F:/")]:
+        if not drive.exists():
+            continue
+        for root in [drive, drive / "SteamLibrary", drive / "Steam", drive / "Program Files (x86)" / "Steam",
+                     drive / "Games" / "Steam"]:
+            dota_cfg = root / "steamapps" / "common" / "dota 2 beta" / "game" / "dota" / "cfg"
+            if dota_cfg.exists():
+                gsi_dir = dota_cfg / "gamestate_integration"
+                gsi_dir.mkdir(parents=True, exist_ok=True)
+                dest = gsi_dir / "gamestate_integration_counter_helper.cfg"
+                old = dest.read_text(encoding="utf-8") if dest.exists() else ""
+                dest.write_text(cfg_content, encoding="utf-8")
+                tag = "UPDATED" if old else "INSTALLED"
+                print(f"[GSI] Config {tag} (brute-force): {dest}")
+                return str(dest)
+
+    print("[GSI] WARNING: Could not find Dota 2 directory. Copy gsi-config/*.cfg manually.")
+    return None
+
+install_gsi_config()
 
 # Load heroes from STRATZ format
 hero_db = []
@@ -65,7 +143,6 @@ load_matchups()
 
 test_mode = False
 test_enemies, test_allies, test_bans = [], [], []
-latest_gs = {}
 my_team = 0
 
 def hero_json(hid, banned=False):
@@ -126,76 +203,130 @@ def get_ban_suggestions(ally_ids, banned_ids, max_n=10):
     result.sort(key=lambda x: -x["score"])
     return result[:max_n]
 
-# GSI receiver on port 3001
-class GSIHandler(BaseHTTPRequestHandler):
-    def do_POST(self):
-        length = int(self.headers.get("Content-Length", 0))
-        if length:
-            global latest_gs, my_team
-            data = json.loads(self.rfile.read(length))
-            latest_gs = data
-            if "player" in data and "team_name" in data["player"]:
-                my_team = 2 if data["player"]["team_name"] == "radiant" else 3
-        self.send_response(200)
-        self.end_headers()
-    def log_message(self, *a): pass
+# GSI server on port 3001 (mirrors C++ GSIServer)
+gsi_server = GSIServer()
+gsi_server.start()
 
-def start_gsi():
-    HTTPServer(("127.0.0.1", 3001), GSIHandler).serve_forever()
-Thread(target=start_gsi, daemon=True).start()
-print("GSI receiver on http://127.0.0.1:3001")
+def _sync_team_from_gsi() -> None:
+    """Keep global my_team in sync with latest GSI state (for counter logic)."""
+    global my_team
+    gs = gsi_server.get_current_state()
+    if gs.team_id:
+        my_team = gs.team_id
 
 # Web server on port 3002
 app = Flask(__name__)
 CORS(app)
 
 def parse_gs():
-    gs = latest_gs or {}
-    gm = gs.get("map", {})
-    phase = {"DOTA_GAMERULES_STATE_HERO_SELECTION": "hero_selection",
-             "DOTA_GAMERULES_STATE_STRATEGY_TIME": "strategy_time",
-             "DOTA_GAMERULES_STATE_PRE_GAME": "pre_game",
-             "DOTA_GAMERULES_STATE_GAME_IN_PROGRESS": "playing",
-             "DOTA_GAMERULES_STATE_POST_GAME": "postgame"}.get(gm.get("game_state",""), "none")
-    draft = gs.get("draft", {})
-    atk, etk = ("team2","team3") if my_team==2 else ("team3","team2")
-    allies, enemies, bans = [], [], []
-    for i in range(5):
-        for arr, tk in [(allies, atk), (enemies, etk)]:
-            pid = draft.get(tk, {}).get(f"pick{i}_id", 0)
-            if pid > 0: arr.append({"heroId": pid})
-    for tk in (atk, etk):
-        for i in range(7):
-            bid = draft.get(tk, {}).get(f"ban{i}_id", 0)
-            if bid > 0: bans.append({"heroId": bid, "isBanned": True})
+    """Parse current GSI state into phase + hero lists.
+    Delegates to the gsi module (mirrors C++ GameState::UpdateFromJsonString)."""
+    _sync_team_from_gsi()
+    gs = gsi_server.get_current_state()
+
+    phase = gs.get_game_phase()
+    allies = [{"heroId": h.hero_id} for h in gs.get_ally_heroes()]
+    enemies = [{"heroId": h.hero_id} for h in gs.get_enemy_heroes()]
+    bans = [{"heroId": h.hero_id, "isBanned": True} for h in gs.get_banned_heroes()]
+
     return phase, allies, enemies, bans
 
-@app.route("/api/state")
-def api_state():
+def _build_state() -> dict:
+    """Build the full /api/state response dict. Shared by poll + SSE."""
     phase, allies, enemies, bans = parse_gs()
     eids = test_enemies if test_mode else [h["heroId"] for h in enemies]
     aids = test_allies if test_mode else [h["heroId"] for h in allies]
     bids = test_bans if test_mode else [h["heroId"] for h in bans]
-    return jsonify({
+    hero_db_json = [{"id": h["id"], "localizedName": h.get("displayName",""),
+        "localizedNameZh": h.get("displayNameZh",""),
+        "attribute": (((h.get("stats")or{}).get("primaryAttributeEnum") or "UNIVERSAL").lower()[:3] or "uni").replace("all","uni")} for h in hero_db]
+    return {
         "testMode": test_mode,
         "phase": phase, "isInDraft": phase in ("hero_selection","strategy_time"),
-        "teamId": my_team, "matchTime": (latest_gs or {}).get("map",{}).get("clock_time",0),
+        "teamId": my_team, "matchTime": gsi_server.get_current_state().match_time,
         "draftActivity": {"active": False, "actingTeam": 0, "action": "none"},
-        "bannedHeroes": [hero_json(x,True) for x in bids] if test_mode else bans,
-        "allyHeroes": [hero_json(x) for x in aids] if test_mode else allies,
-        "enemyHeroes": [hero_json(x) for x in eids] if test_mode else enemies,
-        "heroDatabase": [{"id": h["id"], "localizedName": h.get("displayName",""),
-            "localizedNameZh": h.get("displayNameZh",""),
-            "attribute": (((h.get("stats")or{}).get("primaryAttributeEnum") or "UNIVERSAL").lower()[:3] or "uni").replace("all","uni")} for h in hero_db],
+        "bannedHeroes": [hero_json(x,True) for x in bids] if test_mode else [hero_json(h["heroId"], True) for h in bans],
+        "allyHeroes": [hero_json(x) for x in aids] if test_mode else [hero_json(h["heroId"]) for h in allies],
+        "enemyHeroes": [hero_json(x) for x in eids] if test_mode else [hero_json(h["heroId"]) for h in enemies],
+        "heroDatabase": hero_db_json,
         "suggestions": get_suggestions(eids, bids),
         "banSuggestions": get_ban_suggestions(aids, bids),
         "allySuggestions": get_ally_suggestions(aids, bids),
+    }
+
+
+@app.route("/api/raw_gs")
+def api_raw_gs():
+    """Debug: return current parsed GSI state as JSON."""
+    gs = gsi_server.get_current_state()
+    return jsonify({
+        "phase": gs.get_game_phase(),
+        "teamId": gs.team_id,
+        "matchTime": gs.match_time,
+        "allyHeroes": [{"heroId": h.hero_id, "heroName": h.hero_name, "isPicked": h.is_picked} for h in gs.get_ally_heroes()],
+        "enemyHeroes": [{"heroId": h.hero_id, "heroName": h.hero_name, "isPicked": h.is_picked} for h in gs.get_enemy_heroes()],
+        "bannedHeroes": [{"heroId": h.hero_id, "heroName": h.hero_name, "isBanned": h.is_banned} for h in gs.get_banned_heroes()],
     })
+
+
+@app.route("/api/state")
+def api_state():
+    return jsonify(_build_state())
+
+
+@app.route("/api/stream")
+def api_stream():
+    """SSE endpoint — pushes state only when GSI data changes."""
+    import traceback as _tb
+    def generate():
+        data_event = gsi_server.get_data_event()
+        last_sent = None
+        try:
+            # Send initial state immediately (don't wait for first GSI event)
+            state = _build_state()
+            last_sent = json.dumps(state, ensure_ascii=False)
+            yield f"data: {last_sent}\n\n"
+
+            while True:
+                # Wait for new GSI data, with periodic heartbeat
+                data_event.wait(timeout=15.0)
+                data_event.clear()
+
+                try:
+                    state = _build_state()
+                    state_json = json.dumps(state, ensure_ascii=False)
+
+                    if state_json == last_sent:
+                        yield ": heartbeat\n\n"
+                        continue
+
+                    last_sent = state_json
+                    yield f"data: {state_json}\n\n"
+                except Exception as inner_e:
+                    print(f"[SSE] Error building state: {inner_e}")
+                    _tb.print_exc()
+                    yield ": heartbeat\n\n"
+        except GeneratorExit:
+            pass  # client disconnected — normal
+        except Exception as e:
+            print(f"[SSE] Fatal: {e}")
+            _tb.print_exc()
+
+    return app.response_class(
+        generate(),
+        mimetype="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",
+            "Connection": "keep-alive",
+        },
+    )
 
 @app.route("/api/test/<action>")
 def api_test(action):
     global test_mode, test_enemies, test_allies, test_bans
     hid = request.args.get("id", 0, type=int)
+    changed = True
     if action == "toggle":
         test_mode = not test_mode
         if not test_mode: test_enemies, test_allies, test_bans = [], [], []
@@ -206,6 +337,9 @@ def api_test(action):
     elif action == "ally_remove" and hid: test_allies = [x for x in test_allies if x!=hid]
     elif action == "ban" and hid and hid not in test_bans: test_bans.append(hid)
     elif action == "unban" and hid: test_bans = [x for x in test_bans if x!=hid]
+    else: changed = False
+    if changed:
+        gsi_server.get_data_event().set()  # wake SSE to push updated state
     return jsonify({"ok": True})
 
 @app.route("/", defaults={"path": "index.html"})
@@ -213,7 +347,25 @@ def api_test(action):
 def serve(path):
     return send_from_directory(WEB, path)
 
+# ── Graceful shutdown ──────────────────────────────────────────────
+
+def cleanup():
+    """Release GSI server port. Called on any exit path."""
+    print("\n[Shutdown] Stopping GSI server...")
+    try:
+        gsi_server.stop()
+    except Exception:
+        pass
+    print("[Shutdown] All servers stopped. Ports released.")
+
+atexit.register(cleanup)
+
 if __name__ == "__main__":
-    print("Web UI on http://127.0.0.1:3002")
+    print("GSI + Web UI on http://127.0.0.1:3002")
     webbrowser.open("http://127.0.0.1:3002")
-    app.run(host="127.0.0.1", port=3002, debug=False)
+    try:
+        app.run(host="127.0.0.1", port=3002, debug=False, use_reloader=False)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        cleanup()
