@@ -9,7 +9,6 @@ Mirrors the C++ GSIServer.h / GSIServer.cpp logic:
     enemy/ally hero count changes.
 """
 
-import json
 import threading
 import time
 from http.server import HTTPServer, BaseHTTPRequestHandler
@@ -146,19 +145,6 @@ class GSIServer:
         if not self._first_message:
             self._first_message = True
             print("[GSI] First GSI message received from Dota 2!")
-            # Dump top-level keys to diagnose missing allplayers
-            try:
-                data = json.loads(body)
-                print(f"[GSI]   Top-level keys: {sorted(data.keys())}")
-                # Check allplayers sub-keys
-                ap = data.get("allplayers", {})
-                if ap:
-                    for slot, pd in ap.items():
-                        if isinstance(pd, dict):
-                            print(f"[GSI]   allplayers[{slot}]: {sorted(pd.keys())[:8]}")
-                            break
-            except Exception:
-                pass
 
         with self._state_lock:
             old_phase = self._game_state.get_game_phase()
@@ -169,26 +155,6 @@ class GSIServer:
         # ── Log phase change ────────────────────────────────
         if old_phase != new_phase and new_phase != "none":
             print(f"[GSI] Game phase: {new_phase}")
-
-            if self._game_state.is_in_draft():
-                try:
-                    data = json.loads(body)
-                    # Dump draft, hero sections to debug
-                    player = data.get("player", {})
-                    print(f"[GSI]   player.team_name: {player.get('team_name', 'N/A')}")
-                    print(f"[GSI]   All keys: {sorted(data.keys())}")
-                    draft = data.get("draft", {})
-                    print(f"[GSI]   draft: {draft if draft else '(empty)'}")
-                    hero = data.get("hero", {})
-                    if hero:
-                        print(f"[GSI]   hero keys: {sorted(hero.keys())[:10]}")
-                        for k, v in list(hero.items())[:3]:
-                            print(f"[GSI]   hero.{k}: {json.dumps(v, ensure_ascii=False)[:200]}")
-                    allp = data.get("allplayers", {})
-                    if allp:
-                        print(f"[GSI]   allplayers: {len(allp)} slots")
-                except Exception:
-                    pass
 
         # ── Log draft start ─────────────────────────────────
         if self._game_state.is_in_draft():
