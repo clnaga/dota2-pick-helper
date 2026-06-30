@@ -1,20 +1,30 @@
-# Build directory
-build/
-release/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
 
-# IDE files
-.vscode/
-*.user
-*.suo
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets / local config
+.env
 
 # Logs
 *.log
 
-# imgui.ini
-imgui.ini
+# IDE / editor
+.vscode/
+.idea/
+*.user
+*.suo
 
-# Release archives
+# OS
+.DS_Store
+Thumbs.db
+
+# Archives
 *.zip
-
-.venv
-.env

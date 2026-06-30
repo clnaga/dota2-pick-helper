@@ -1,5 +1,5 @@
 // ===== State =====
-let state = { testMode: false, heroDatabase: [] };
+let state = { heroDatabase: [] };
 let heroMap = {};
 let selectedHeroId = null;
 let attrFilter = 'all';
@@ -27,7 +27,6 @@ es.onmessage = function(e) {
 
 // ===== Render =====
 function render() {
-  renderMode();
   renderBans();
   renderAllies();
   renderEnemies();
@@ -38,17 +37,6 @@ function render() {
   renderTestControls();
   renderHeroGrid();
   renderStatus();
-}
-
-function renderMode() {
-  const btn = document.getElementById('btn-toggle-mode');
-  if (state.testMode) {
-    btn.className = 'btn-mode btn-test';
-    btn.textContent = 'TEST';
-  } else {
-    btn.className = 'btn-mode btn-live';
-    btn.textContent = 'LIVE';
-  }
 }
 
 function shortName(info) {
@@ -73,24 +61,21 @@ function renderBans() {
   const list = document.getElementById('bans-list');
   const bans = state.bannedHeroes || [];
   document.getElementById('ban-count').textContent = bans.length;
-  const removable = state.testMode;
-  list.innerHTML = bans.map(h => heroIconHtml(h.heroId, true, removable)).join('');
+  list.innerHTML = bans.map(h => heroIconHtml(h.heroId, true, true)).join('');
 }
 
 function renderAllies() {
   const list = document.getElementById('allies-list');
   const allies = state.allyHeroes || [];
   document.getElementById('ally-count').textContent = allies.length + '/5';
-  const removable = state.testMode;
-  list.innerHTML = allies.map(h => heroIconHtml(h.heroId, false, removable)).join('');
+  list.innerHTML = allies.map(h => heroIconHtml(h.heroId, false, true)).join('');
 }
 
 function renderEnemies() {
   const list = document.getElementById('enemies-list');
   const enemies = state.enemyHeroes || [];
   document.getElementById('enemy-count').textContent = enemies.length + '/5';
-  const removable = state.testMode;
-  list.innerHTML = enemies.map(h => heroIconHtml(h.heroId, false, removable)).join('');
+  list.innerHTML = enemies.map(h => heroIconHtml(h.heroId, false, true)).join('');
 }
 
 function renderTurn() {
@@ -158,18 +143,14 @@ function renderStatus() {
   el.textContent = 'Phase: ' + phase + ' | ' + Math.floor(time / 60) + ':' + (time % 60).toString().padStart(2, '0');
 }
 
-// ===== Test Controls =====
+// ===== Manual hero controls (always available) =====
 function renderTestControls() {
-  const el = document.getElementById('test-controls');
-  el.style.display = state.testMode ? 'block' : 'none';
-  const hints = document.querySelectorAll('.remove-hint');
-  hints.forEach(h => h.style.display = state.testMode ? 'inline' : 'none');
+  document.getElementById('test-controls').style.display = 'block';
+  document.querySelectorAll('.remove-hint').forEach(h => h.style.display = 'inline');
 }
 
 function renderHeroGrid() {
   const grid = document.getElementById('hero-grid');
-  if (!state.testMode) { grid.innerHTML = ''; return; }
-
   const heroes = state.heroDatabase || [];
   const taken = new Set();
   for (const h of (state.bannedHeroes || [])) taken.add(h.heroId);
@@ -205,7 +186,7 @@ async function addSelectedHero(type) {
   const actions = { enemy: 'enemy_add', ally: 'ally_add', ban: 'ban' };
   const action = actions[type];
   if (!action) return;
-  fetch('/api/test/' + action + '?id=' + selectedHeroId);
+  fetch('/api/edit/' + action + '?id=' + selectedHeroId);
   selectedHeroId = null;
   // SSE pushes the update — no need to poll
 }
@@ -215,18 +196,13 @@ async function removeItem(heroId) {
   const inAlly = (state.allyHeroes || []).some(h => h.heroId === heroId);
   const inBan = (state.bannedHeroes || []).some(h => h.heroId === heroId);
   
-  if (inBan) fetch('/api/test/unban?id=' + heroId);
-  else if (inEnemy) fetch('/api/test/enemy_remove?id=' + heroId);
-  else if (inAlly) fetch('/api/test/ally_remove?id=' + heroId);
+  if (inBan) fetch('/api/edit/unban?id=' + heroId);
+  else if (inEnemy) fetch('/api/edit/enemy_remove?id=' + heroId);
+  else if (inAlly) fetch('/api/edit/ally_remove?id=' + heroId);
 }
 
 async function clearTestData() {
-  fetch('/api/test/clear');
-}
-
-async function toggleTestMode() {
-  fetch('/api/test/toggle');
-  selectedHeroId = null;
+  fetch('/api/edit/clear');
 }
 
 function setAttrFilter(attr) {

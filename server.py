@@ -141,9 +141,24 @@ def load_matchups():
         print(f"Counter data not loaded: {e}")
 load_matchups()
 
-test_mode = False
-test_enemies, test_allies, test_bans = [], [], []
+# ── Manual hero overrides (click-to-add) ────────────────────────────
+# Merged on top of GSI-detected heroes so automatic (Captain's Mode
+# draft) and manual click entry work at the same time. `hidden_*` holds
+# heroes the user explicitly removed, so a wrong/unwanted GSI detection
+# stays gone instead of reappearing on the next GSI push.
+manual_enemies, manual_allies, manual_bans = [], [], []
+hidden_enemies, hidden_allies, hidden_bans = set(), set(), set()
 my_team = 0
+
+def _edit_add(manual: list, hidden: set, hid: int, limit) -> None:
+    hidden.discard(hid)
+    if hid not in manual and (limit is None or len(manual) < limit):
+        manual.append(hid)
+
+def _edit_remove(manual: list, hidden: set, hid: int) -> None:
+    if hid in manual:
+        manual.remove(hid)
+    hidden.add(hid)  # also suppress it if it came from GSI
 
 def hero_json(hid, banned=False):
     info = hero_by_id.get(hid, {})
@@ -231,23 +246,33 @@ def parse_gs():
 
     return phase, allies, enemies, bans
 
+def _merge(gsi_ids, manual_ids, hidden) -> list:
+    """GSI-detected heroes first, then manual additions; minus removed (hidden)."""
+    out = []
+    for hid in list(gsi_ids) + list(manual_ids):
+        if hid and hid not in hidden and hid not in out:
+            out.append(hid)
+    return out
+
 def _build_state() -> dict:
-    """Build the full /api/state response dict. Shared by poll + SSE."""
+    """Build the full /api/state response dict. Shared by poll + SSE.
+
+    Hero lists are GSI-detected heroes (Captain's Mode draft) merged with
+    manual click additions — both work simultaneously, no live/test toggle."""
     phase, allies, enemies, bans = parse_gs()
-    eids = test_enemies if test_mode else [h["heroId"] for h in enemies]
-    aids = test_allies if test_mode else [h["heroId"] for h in allies]
-    bids = test_bans if test_mode else [h["heroId"] for h in bans]
+    eids = _merge((h["heroId"] for h in enemies), manual_enemies, hidden_enemies)
+    aids = _merge((h["heroId"] for h in allies), manual_allies, hidden_allies)
+    bids = _merge((h["heroId"] for h in bans), manual_bans, hidden_bans)
     hero_db_json = [{"id": h["id"], "localizedName": h.get("displayName",""),
         "localizedNameZh": h.get("displayNameZh",""),
         "attribute": (((h.get("stats")or{}).get("primaryAttributeEnum") or "UNIVERSAL").lower()[:3] or "uni").replace("all","uni")} for h in hero_db]
     return {
-        "testMode": test_mode,
         "phase": phase, "isInDraft": phase in ("hero_selection","strategy_time"),
         "teamId": my_team, "matchTime": gsi_server.get_current_state().match_time,
         "draftActivity": {"active": False, "actingTeam": 0, "action": "none"},
-        "bannedHeroes": [hero_json(x,True) for x in bids] if test_mode else [hero_json(h["heroId"], True) for h in bans],
-        "allyHeroes": [hero_json(x) for x in aids] if test_mode else [hero_json(h["heroId"]) for h in allies],
-        "enemyHeroes": [hero_json(x) for x in eids] if test_mode else [hero_json(h["heroId"]) for h in enemies],
+        "bannedHeroes": [hero_json(x, True) for x in bids],
+        "allyHeroes": [hero_json(x) for x in aids],
+        "enemyHeroes": [hero_json(x) for x in eids],
         "heroDatabase": hero_db_json,
         "suggestions": get_suggestions(eids, bids),
         "banSuggestions": get_ban_suggestions(aids, bids),
@@ -322,21 +347,20 @@ def api_stream():
         },
     )
 
-@app.route("/api/test/<action>")
-def api_test(action):
-    global test_mode, test_enemies, test_allies, test_bans
+@app.route("/api/edit/<action>")
+def api_edit(action):
+    """Manual hero edits, merged with GSI — both active at once (no live/test toggle)."""
     hid = request.args.get("id", 0, type=int)
     changed = True
-    if action == "toggle":
-        test_mode = not test_mode
-        if not test_mode: test_enemies, test_allies, test_bans = [], [], []
-    elif action == "clear": test_enemies, test_allies, test_bans = [], [], []
-    elif action == "enemy_add" and hid and len(test_enemies)<5 and hid not in test_enemies: test_enemies.append(hid)
-    elif action == "enemy_remove" and hid: test_enemies = [x for x in test_enemies if x!=hid]
-    elif action == "ally_add" and hid and len(test_allies)<5 and hid not in test_allies: test_allies.append(hid)
-    elif action == "ally_remove" and hid: test_allies = [x for x in test_allies if x!=hid]
-    elif action == "ban" and hid and hid not in test_bans: test_bans.append(hid)
-    elif action == "unban" and hid: test_bans = [x for x in test_bans if x!=hid]
+    if action == "clear":
+        for lst in (manual_enemies, manual_allies, manual_bans): lst.clear()
+        for s in (hidden_enemies, hidden_allies, hidden_bans): s.clear()
+    elif action == "enemy_add" and hid:    _edit_add(manual_enemies, hidden_enemies, hid, 5)
+    elif action == "enemy_remove" and hid: _edit_remove(manual_enemies, hidden_enemies, hid)
+    elif action == "ally_add" and hid:     _edit_add(manual_allies, hidden_allies, hid, 5)
+    elif action == "ally_remove" and hid:  _edit_remove(manual_allies, hidden_allies, hid)
+    elif action == "ban" and hid:          _edit_add(manual_bans, hidden_bans, hid, None)
+    elif action == "unban" and hid:        _edit_remove(manual_bans, hidden_bans, hid)
     else: changed = False
     if changed:
         gsi_server.get_data_event().set()  # wake SSE to push updated state
@@ -345,7 +369,10 @@ def api_test(action):
 @app.route("/", defaults={"path": "index.html"})
 @app.route("/<path:path>")
 def serve(path):
-    return send_from_directory(WEB, path)
+    # no-store: always serve fresh HTML/JS/CSS so edits take effect without a hard refresh
+    resp = send_from_directory(WEB, path)
+    resp.headers["Cache-Control"] = "no-store"
+    return resp
 
 # ── Graceful shutdown ──────────────────────────────────────────────
 
