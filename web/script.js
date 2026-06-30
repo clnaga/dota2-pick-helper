@@ -121,9 +121,17 @@ function renderAllySuggestions() {
   list.innerHTML = allies.map(s => suggestionRow(s, false, true)).join('');
 }
 
+function formatHeroDisplayName(info, heroId) {
+  if (!info) return '#' + heroId;
+  const zh = info.localizedNameZh;
+  const en = info.localizedName;
+  if (zh && en) return zh + '（' + en + '）';
+  return zh || en || '#' + heroId;
+}
+
 function suggestionRow(sug, isBan, isAlly) {
   const info = heroMap[sug.heroId];
-  const name = info ? (info.localizedNameZh || info.localizedName) : '#' + sug.heroId;
+  const name = formatHeroDisplayName(info, sug.heroId);
   const attr = info ? (info.attribute || 'all') : 'all';
   const wr = (sug.winRate || 50).toFixed(0);
   const sc = (sug.score || 0).toFixed(1);
